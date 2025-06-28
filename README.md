@@ -3,7 +3,7 @@ About freesasa-c-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/freesasa-c-feedstock/blob/main/LICENSE.txt)
 
-Home: https://freesasa.github.io
+Home: https://freesasa.github.io/
 
 Package license: MIT
 
@@ -17,8 +17,7 @@ FreeSASA is a C library and C++ command line tool for calculating Solvent Access
 It is designed to be simple to use with defaults, but allows customization of all parameters of the calculation and provides a few different tools to analyze the results.
 
 FreeSASA can be cited using the following publication:
-  - [10.12688/f1000research.7931.1](http://dx.doi.org/10.12688/f1000research.7931.1))
-
+  - [10.12688/f1000research.7931.1](http://dx.doi.org/10.12688/f1000research.7931.1)
 
 Current build status
 ====================

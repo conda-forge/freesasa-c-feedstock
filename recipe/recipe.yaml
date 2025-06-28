@@ -1,0 +1,60 @@
+context:
+  name: FreeSASA
+  version: "2.1.2"
+  sha256: a031c4eb8cd59e802d715a37ef72930ec2d90ec53dfcf1bea0b0255980490fd5
+
+package:
+  name: ${{ name|lower }}-c
+  version: ${{ version }}
+
+source:
+  url: https://github.com/mittinatten/${{ name|lower }}/releases/download/${{ version }}/${{ name|lower }}-${{ version }}.zip
+  sha256: ${{ sha256 }}
+
+build:
+  number: 0
+  skip:
+    - win
+
+requirements:
+  build:
+    - ${{ compiler("c") }}
+    - ${{ compiler("cxx") }}
+    - ${{ stdlib("c") }}
+    - autoconf
+    - automake
+    - libtool
+    - make
+    - pkg-config
+  host:
+    - json-c
+    - libxml2
+  run_exports:
+    - ${{ pin_subpackage("freesasa-c", upper_bound="x.x") }}
+
+tests:
+  - script:
+      - freesasa -h
+      - freesasa tests/data/1a0q.pdb
+    files:
+      source:
+        - tests/data/1a0q.pdb
+
+about:
+  homepage: https://freesasa.github.io
+  repository: https://github.com/mittinatten/freesasa
+  documentation: https://freesasa.github.io/doxygen
+  license: MIT
+  license_file: LICENSE
+  summary: "C-library for calculating Solvent Accessible Surface Areas"
+  description: |
+    FreeSASA is a C library and C++ command line tool for calculating Solvent Accessible Surface Area (SASA) of biomolecules.
+    It is designed to be simple to use with defaults, but allows customization of all parameters of the calculation and provides a few different tools to analyze the results.
+
+    FreeSASA can be cited using the following publication:
+      - [10.12688/f1000research.7931.1](http://dx.doi.org/10.12688/f1000research.7931.1)
+
+extra:
+  recipe-maintainers:
+    - eunos-1128
+    - mittinatten
