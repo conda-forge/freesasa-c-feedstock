@@ -12,7 +12,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip:
     - win
 
@@ -28,7 +28,7 @@ requirements:
     - pkg-config
   host:
     - json-c
-    - libxml2
+    - libxml2-devel
   run_exports:
     - ${{ pin_subpackage("freesasa-c", upper_bound="x.x") }}
 
