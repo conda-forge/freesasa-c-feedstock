@@ -1,18 +1,18 @@
 context:
   name: FreeSASA
-  version: "2.1.2"
-  sha256: a031c4eb8cd59e802d715a37ef72930ec2d90ec53dfcf1bea0b0255980490fd5
+  version: "2.1.4"
+  sha256: 8c5b94fd83430113f366477ca872fb766948d0a8c96c548f1f2fe7c085207a18
 
 package:
   name: ${{ name|lower }}-c
   version: ${{ version }}
 
 source:
-  url: https://github.com/mittinatten/${{ name|lower }}/releases/download/${{ version }}/${{ name|lower }}-${{ version }}.zip
+  url: https://github.com/mittinatten/${{ name|lower }}/releases/download/${{ version }}/${{ name|lower }}-${{ version }}.tar.gz
   sha256: ${{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip:
     - win
 
